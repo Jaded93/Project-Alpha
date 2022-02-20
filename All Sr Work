@@ -1,0 +1,520 @@
+// See https://aka.ms/new-console-template for more information
+
+//SR2 Create Shapes Using Write.line
+{
+    //Square
+Console.WriteLine(" _______ ");
+Console.WriteLine("|       |");
+Console.WriteLine("|       |");
+Console.WriteLine("|_______| \n");
+    //Triangle
+Console.WriteLine("   / \\");
+Console.WriteLine("  /   \\");
+Console.WriteLine(" /     \\");
+Console.WriteLine("/_______\\ \n");
+
+    //Rectangle
+Console.WriteLine(" ____________ ");
+Console.WriteLine("|            |");
+Console.WriteLine("|            |");
+Console.WriteLine("|____________| \n");
+    //Sideways Triangle
+Console.WriteLine("|\\");
+Console.WriteLine("| \\");
+Console.WriteLine("|  \\");
+Console.WriteLine("|___\\ \n");
+}
+
+//SR3 My Day 1 Experience
+{ 
+Console.WriteLine("My Day 1 Experience at techtorium for 2022 was good");
+}
+
+//SR4 Ratings
+{ 
+Console.WriteLine("1. I rate my Confidence 7/10");
+Console.WriteLine("2. I rate my Creativity 11/10");
+Console.WriteLine("3. I rate my Resilience 8/10");
+Console.WriteLine("4. I rate my Positivity 7/10");
+Console.WriteLine("5. I rate my Hard Work 11/10");
+Console.WriteLine("6. I rate my Love for Programming 7/10");
+}
+
+//SR5 Gather Info Of Person Next To Me
+{
+    string name = Name();
+    string highSchool = HighSchool();
+    string id = ID();
+    string trainerName = TrainerName();
+    string contactNum = ContactNum();
+    string[] hobbies = Hobbies();
+    Console.WriteLine("Name: " + name +
+     "\nHigh School: " + highSchool +
+     "\nTechtorium ID: " + id +
+     "\nTrainer Name: " + trainerName +
+     "\nContact Phone Number: " + contactNum);
+    Console.WriteLine("Hobbies:");
+    foreach (string hobby in hobbies)
+    {
+        Console.WriteLine("- " + hobby);
+    }
+}
+
+static string Name()
+{
+    // Gathering Name
+    string name = "";
+    while (String.IsNullOrEmpty(name) || String.IsNullOrWhiteSpace(name))
+    {
+        Console.Write("Please Enter Your Name: ");
+        name = Console.ReadLine();
+    }
+    return name;
+}
+
+static string HighSchool()
+{
+    // Gathering High School
+    string highSchool = "";
+    while (String.IsNullOrEmpty(highSchool) || String.IsNullOrWhiteSpace(highSchool))
+    {
+        Console.Write("Please Enter Your High School: ");
+        highSchool = Console.ReadLine();
+    }
+    return highSchool;
+}
+
+static string ID()
+{
+    // Gathering Student ID
+    string input = "";
+    while (String.IsNullOrEmpty(input) || String.IsNullOrWhiteSpace(input))
+    {
+        Console.Write("Please Enter Your Techtorium ID: ");
+        input = Console.ReadLine();
+    }
+    return input;
+}
+
+static string TrainerName()
+{
+    // Gathering Trainer Name
+    string trainerName = "";
+    while (String.IsNullOrEmpty(trainerName) || String.IsNullOrWhiteSpace(trainerName))
+    {
+        Console.Write("Please Enter Your Trainer's Name: ");
+        trainerName = Console.ReadLine();
+    }
+    return trainerName;
+}
+
+static string ContactNum()
+{
+    // Gathering Contact Phone Number
+    string contactNum = "";
+    while (String.IsNullOrEmpty(contactNum) || String.IsNullOrWhiteSpace(contactNum))
+    {
+        Console.Write("Please Enter Your Contact Number: ");
+        contactNum = Console.ReadLine();
+    }
+    return contactNum;
+}
+
+static string[] Hobbies()
+{
+    // Gathering Hobbies
+    string hobbies = "";
+    while (String.IsNullOrEmpty(hobbies) || String.IsNullOrWhiteSpace(hobbies))
+    {
+        Console.Write("Please Enter 1-3 Of Your Interests/Hobbies: ");
+        hobbies = Console.ReadLine();
+    }
+    string[] hobbiesArray = hobbies.Split(',');
+    return hobbiesArray;
+}
+
+//SR6 Check if person next to me is older or younger
+
+{
+    // Check if person next to me is older or younger
+    int age1;
+    int age2;
+    string input1 = "";
+    string input2 = "";
+    while (!int.TryParse(input1, out age1))
+    {
+        Console.Write("Please input your age: ");
+        input1 = Console.ReadLine();
+    }
+    while (!int.TryParse(input2, out age2))
+    {
+        Console.Write("Please Enter The Age Of The Person Sitting Next To You: ");
+        input2 = Console.ReadLine();
+    }
+
+    if (age1 > age2)
+    {
+        Console.WriteLine("You Are Older");
+    }
+    else if (age1 < age2)
+    {
+        Console.WriteLine("You Are Younger");
+    }
+    else if (age1 == age2)
+    {
+        Console.WriteLine("You're The Same Age");
+    }
+}
+
+//SR7 Are You Able To Vote??
+
+{
+    char answer1;
+    char answer2;
+    char answer3;
+    string input1 = "";
+    string input2 = "";
+    string input3 = "";
+    Console.WriteLine("Answer The Following Questions Truthfully To See If You're Eligible To Vote. y = yes, n = no");
+    while (input1 != "y" && input1 != "Y" && input1 != "n" && input1 != "N")
+    {
+        Console.Write("Are You 18+ Years Old??");
+        input1 = Console.ReadLine();
+    }
+    while (input2 != "y" && input2 != "Y" && input2 != "n" && input2 != "N")
+    {
+        Console.Write("Are You A New Zealand Citizen?");
+        input2 = Console.ReadLine();
+    }
+    while (input3 != "y" && input3 != "Y" && input3 != "n" && input3 != "N")
+    {
+        Console.Write("Have You Lived In New Zealand Continuously For 12 Months Or More At Some Time In Your Life?");
+        input3 = Console.ReadLine();
+    }
+    answer1 = Convert.ToChar(input1.ToLower());
+    answer2 = Convert.ToChar(input2.ToLower());
+    answer3 = Convert.ToChar(input3.ToLower());
+    input1.ToLower();
+    input2.ToLower();
+    input3.ToLower();
+    if (answer1 == 'y' && answer2 == 'y' && answer3 == 'y')
+    {
+        Console.WriteLine("You Are Eligible To Vote In New Zealand");
+    }
+    else
+    {
+        Console.WriteLine("You Are Not Eligible To Vote In New Zealand");
+    }
+}
+
+//SR8 check wether number entered is negitive or positive
+
+{
+    int num;
+    string input1 = "";
+    while (!int.TryParse(input1, out num))
+    {
+        Console.Write("Please Enter A Number: ");
+        input1 = Console.ReadLine();
+    }
+   
+    if (num < 0)
+    {
+        Console.WriteLine("Your Number Is Negative");
+    }
+    if (num > 0)
+    {
+        Console.WriteLine("Your Number Is Positive");
+    }
+    if (num == 0)
+    {
+        Console.WriteLine("Your Number Isn't Positive Or Negative");
+    }
+}
+
+//SR9
+
+{
+    int davidsAge = 19;
+    int lukesAge = 17;
+    int ageDifference = davidsAge - lukesAge;
+    Console.WriteLine("Luke Is " + ageDifference + " Years Younger Than David");
+}
+
+//SR10
+{
+    string input = "";
+    int num;
+    while (!int.TryParse(input, out num))
+    {
+        Console.Write("Please Enter A Number: ");
+        input = Console.ReadLine();
+    }
+
+    if (num % 2 == 0)
+    {
+        Console.WriteLine("Number Is Even");
+    }
+    else
+    {
+        Console.WriteLine("Number Is Odd");
+    }
+}
+
+//SR11
+{
+    int mark1 = 23;
+    int mark2 = 76;
+    int mark3 = 52;
+    string grade1 = GetGrade(mark1);
+    string grade2 = GetGrade(mark2);
+    string grade3 = GetGrade(mark3);
+    if (grade1 != null && grade2 != null && grade3 != null)
+    {
+        Console.WriteLine("Mark 1 = " + mark1 + "%, Grade 1 = " + grade1);
+        Console.WriteLine("Mark 2 = " + mark2 + "%, Grade 2 = " + grade2);
+        Console.WriteLine("Mark 3 = " + mark3 + "%, Grade 3 = " + grade3);
+    }
+}
+
+static string GetGrade(int mark)
+{
+    string[] grades = { "Fail E", "Fail D", "C-", "C", "C+", "B-", "B", "B+", "A-", "A", "A+" };
+    if (mark < 40 && mark >= 0)
+    {
+        return grades[0];
+    }
+    if (mark >= 40 && mark < 50)
+    {
+        return grades[1];
+    }
+    if (mark >= 50 && mark < 55)
+    {
+        return grades[2];
+    }
+    if (mark >= 55 && mark < 60)
+    {
+        return grades[3];
+    }
+    if (mark >= 60 && mark < 65)
+    {
+        return grades[4];
+    }
+    if (mark >= 65 && mark < 70)
+    {
+        return grades[5];
+    }
+    if (mark >= 70 && mark < 75)
+    {
+        return grades[6];
+    }
+    if (mark >= 75 && mark < 80)
+    {
+        return grades[7];
+    }
+    if (mark >= 80 && mark < 85)
+    {
+        return grades[8];
+    }
+    if (mark >= 85 && mark < 90)
+    {
+        return grades[9];
+    }
+    if (mark >= 90 && mark < 101)
+    {
+        return grades[10];
+    }
+    return null;
+}
+
+//SR12
+{
+    int num1;
+    int num2;
+    char operation;
+    string input1 = "";
+    string input2 = "";
+    string input3 = "";
+    int? answer;
+    while (!int.TryParse(input1, out num1))
+    {
+        Console.Write("Input first number: ");
+        input1 = Console.ReadLine();
+    }
+    while (!char.TryParse(input2, out operation))
+    {
+        Console.Write("Input operation: ");
+        input2 = Console.ReadLine();
+    }
+    while (!int.TryParse(input3, out num2))
+    {
+        Console.Write("Input second number: ");
+        input3 = Console.ReadLine();
+    }
+
+    answer = Calculate(num1, operation, num2);
+    if (answer != null)
+    {
+        Console.WriteLine(num1 + " " + operation + " " + num2 + " = " + answer);
+    }
+    else
+    {
+        Console.WriteLine("Invalid calculation");
+        
+    }
+}
+
+//SR13
+
+{
+    string input = "";
+    int number;
+    int answer = 0;
+    while (!int.TryParse(input, out number))
+    {
+        Console.WriteLine("Please Enter A Number: ");
+        input = Console.ReadLine();
+    }
+    for (int i = 0; i < input.Length; i++)
+    {
+        answer += (Convert.ToInt16(input[i].ToString()));
+        if (i != input.Length - 1)
+        {
+            Console.Write(input[i] + " + ");
+        }
+        else
+        {
+            Console.Write(input[i] + " = ");
+        }
+    }
+    Console.Write(answer);
+}
+
+static int? Calculate(int num1, int operation, int num2)
+{
+    switch (operation)
+    {
+        case '+':
+            return num1 + num2;
+        case '-':
+            return num1 - num2;
+        case '*':
+            return num1 * num2;
+        case '/':
+            return num1 / num2;
+        case '%':
+            return num1 % num2;
+        default:
+            return null;
+    }
+}
+
+//SR14
+{
+    string input = "";
+    string reversedNum = "";
+    long num;
+
+    while (!long.TryParse(input, out num))
+    {
+        Console.Write("Please Enter A Number: ");
+        input = Console.ReadLine();
+    }
+    for (int i = 0; i < input.Length; i++)
+    {
+        reversedNum += input[input.Length - (1 + i)];
+    }
+    Console.WriteLine("Reversed Number: " + reversedNum);
+}
+
+//SR15
+{
+    char[] options = { 'r', 'p', 's' };
+    string input = "";
+    int randNum;
+    Random rand = new Random();
+    randNum = rand.Next(3);
+    char comp = options[randNum];
+    char player;
+    string playerOption = "";
+    string compOption = "";
+    while (!char.TryParse(input, out player))
+    {
+        Console.Write("Please Enter r(Rock), p(Paper), or s(Scissors): ");
+        input = Console.ReadLine();
+    }
+    input.ToLower();
+    player = input[0];
+
+    switch (player)
+    {
+        case 'r':
+            playerOption = "Rock";
+            break;
+        case 'p':
+            playerOption = "Paper";
+            break;
+        case 's':
+            playerOption = "Scissors";
+            break;
+    }
+
+    switch (comp)
+    {
+        case 'r':
+            compOption = "Rock";
+            break;
+        case 'p':
+            compOption = "Paper";
+            break;
+        case 's':
+            compOption = "Scissors";
+            break;
+    }
+
+    Console.WriteLine("You: " + playerOption + ", Computer: " + compOption);
+    if (comp == player)
+    {
+        Console.WriteLine("It's A Tie");
+    }
+    else
+    {
+        switch (player)
+        {
+            case 'r':
+                if (comp == 'p')
+                {
+                    Console.WriteLine("You Lose");
+                }
+                if (comp == 's')
+                {
+                    Console.WriteLine("You Win");
+                }
+                break;
+            case 's':
+                if (comp == 'p')
+                {
+                    Console.WriteLine("You Win");
+                }
+                if (comp == 'r')
+                {
+                    Console.WriteLine("You Lose");
+                }
+                break;
+            case 'p':
+                if (comp == 'r')
+                {
+                    Console.WriteLine("You Win");
+                }
+                if (comp == 's')
+                {
+                    Console.WriteLine("You Lose");
+                }
+                break;
+            default:
+                Console.WriteLine("Invalid Input");
+                break;
+        }
+    }
+}
+
